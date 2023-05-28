@@ -1,9 +1,8 @@
 import React from 'react';
 import { VStack, Text, Box, FormControl, Input } from 'native-base';
-import { StyleSheet, StatusBar, Button } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
+import Logo from '../../src/assets/logo.json';
 import LottieView from 'lottie-react-native';
-import { Inputs } from '../../src/components/Inputs';
-import { LoginButton } from '../../src/components/LoginButton';
 
 interface Props {
     navigation: any;
@@ -20,26 +19,11 @@ export default function Home(props: Props) {
             <StatusBar backgroundColor="black" />
             <Text style={styles.title}> Welcome Aboard</Text>
             <Text style={styles.title}> Enjoy your vibe</Text>
-
-            <VStack flex={1}>
-                <LottieView
-                    source={require('../../src/assets/logo.json')}
-                    autoPlay
-                    loop
-                    style={styles.image}
-                />
-            </VStack>
-            <Box style={styles.formArea}>
-                <FormControl marginTop={3}>
-                    <Inputs placeholder="E-mail" />
-                    <Inputs placeholder="Password" />
-                </FormControl>
-                <VStack style={styles.loginButton}>
-                    <LoginButton onPress={() => props.navigation.navigate('Home')}>
-                        LOGIN
-                    </LoginButton>
-                </VStack>
-            </Box>
+            <LottieView
+                source={require('../../src/assets/logo.json')}
+                autoPlay
+                loop
+                style={styles.image}></LottieView>
         </VStack>
     );
 }
@@ -52,8 +36,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
     },
     image: {
-        width: '100%',
-        height: '100%',
+        width: '50%',
+        height: '50%',
         alignItems: 'center',
     },
     title: {
@@ -65,12 +49,13 @@ const styles = StyleSheet.create({
         fontFamily: '',
         fontWeight: 'bold',
     },
-    formArea: {
-        flex: 2,
-    },
-    loginButton: {
-        alignItems: 'center',
-        fontSize: 10,
-        fontWeight: 'bold',
+    bottom: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        width: '100%',
+        height: 50,
+        backgroundColor: '#4d94ff',
     },
 });

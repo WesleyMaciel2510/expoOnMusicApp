@@ -7,6 +7,7 @@ import Search from '../screens/Search/Search';
 import Library from '../screens/Library/Library';
 import Login from '../screens/Login/Login';
 import ForgotPassword from '../screens/ForgotPassword/ForgotPassword';
+import SignIn from '../screens/SignIn/SignIn';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function Navigation() {
                 {/* Login Stack */}
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+                <Stack.Screen name="SignIn" component={SignIn} />
 
                 {/* Authenticated Stack */}
                 <Stack.Screen name="Home" component={Home} />

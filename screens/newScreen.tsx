@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import BottomIcons from '../components/BottomIcons/BottomIcons';
+import BottomIcons from '../components/BottomIcons';
 
 interface Props {
     navigation: any;

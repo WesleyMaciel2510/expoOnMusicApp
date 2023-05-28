@@ -1,6 +1,11 @@
 import React from 'react';
 import Navigation from './routes';
+import { NativeBaseProvider } from 'native-base';
 
 export default function App() {
-  return <Navigation />;
+    return (
+        <NativeBaseProvider>
+            <Navigation />
+        </NativeBaseProvider>
+    );
 }

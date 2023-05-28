@@ -1,21 +1,30 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import BottomIcons from '../../components/BottomIcons/BottomIcons';
+import BottomIcons from '../../components/BottomIcons';
+import { NativeBaseProvider, StatusBar } from 'native-base';
 
 interface Props {
     navigation: any;
 }
 
 export default function Home(props: Props) {
+    React.useLayoutEffect(() => {
+        props.navigation.setOptions({
+            headerLeft: () => null, // Hide the back arrow
+        });
+    }, [props.navigation]);
     return (
-        <View style={styles.container}>
-            <Text>Home Screen</Text>
+        <NativeBaseProvider>
+            <StatusBar backgroundColor={'#4d94ff'} />
+            <View style={styles.container}>
+                <Text>Home Screen</Text>
 
-            <Button title="Go to Search" onPress={() => props.navigation.navigate('Search')} />
-            <View style={styles.bottom}>
-                <BottomIcons navigation={props.navigation} />
+                <Button title="Go to Search" onPress={() => props.navigation.navigate('Search')} />
+                <View style={styles.bottom}>
+                    <BottomIcons navigation={props.navigation} />
+                </View>
             </View>
-        </View>
+        </NativeBaseProvider>
     );
 }
 
