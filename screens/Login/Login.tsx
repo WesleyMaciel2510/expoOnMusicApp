@@ -1,9 +1,10 @@
 import React from 'react';
 import { VStack, Text, Box, FormControl, Input } from 'native-base';
-import { StyleSheet, StatusBar, Button } from 'react-native';
+import { StyleSheet, StatusBar, TextInput } from 'react-native';
 import LottieView from 'lottie-react-native';
 import { Inputs } from '../../src/components/Inputs';
 import { LoginButton } from '../../src/components/LoginButton';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 interface Props {
     navigation: any;
@@ -31,8 +32,14 @@ export default function Home(props: Props) {
             </VStack>
             <Box style={styles.formArea}>
                 <FormControl marginTop={3}>
-                    <Inputs placeholder="E-mail" />
-                    <Inputs placeholder="Password" />
+                    <Inputs
+                        placeholder="E-mail"
+                        leftIcon={<Icon name="user" size={20} color="black" />}
+                    />
+                    <Inputs
+                        placeholder="Password"
+                        leftIcon={<Icon name="lock" size={20} color="black" />}
+                    />
                 </FormControl>
                 <VStack style={styles.loginButton}>
                     <LoginButton onPress={() => props.navigation.navigate('Home')}>

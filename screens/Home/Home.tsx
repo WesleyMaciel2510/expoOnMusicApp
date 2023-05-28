@@ -11,6 +11,12 @@ export default function Home(props: Props) {
     React.useLayoutEffect(() => {
         props.navigation.setOptions({
             headerLeft: () => null, // Hide the back arrow
+            headerStyle: {
+                backgroundColor: 'black',
+                borderBottomWidth: 1,
+                borderBottomColor: 'gray',
+            },
+            headerTitleStyle: { color: 'white' },
         });
     }, [props.navigation]);
     return (
@@ -33,6 +39,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'black',
     },
     bottom: {
         position: 'absolute',

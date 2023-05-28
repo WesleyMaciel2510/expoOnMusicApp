@@ -1,5 +1,7 @@
 import React from 'react';
 import { Input, FormControl } from 'native-base';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 interface InputProps {
     label?: string;
@@ -14,11 +16,11 @@ export function Inputs({ label, placeholder, secureTextEntry = false }: InputPro
             {label && <FormControl.Label>{label}</FormControl.Label>}
             <Input
                 placeholder={placeholder}
-                size="lg"
+                size="xl"
                 width="80%"
                 borderRadius="lg"
                 bgColor="#424242"
-                padding={3}
+                paddingLeft={19}
                 margin={2}
                 secureTextEntry={secureTextEntry}
                 shadow={3}

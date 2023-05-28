@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useContext } from 'react';
-import { useBetween } from 'use-between';
-import { useDispatch } from 'react-redux';
+/* import { useBetween } from 'use-between';
+import { useDispatch } from 'react-redux'; */
 
 // ----------- Sharabled State -----------
 const useLogicStates = () => {
@@ -16,7 +16,7 @@ const useLogicStates = () => {
 };
 
 // ----------- All Shared States -----------
-export const useSharedState = () => useBetween(useLogicStates);
+/* export const useSharedState = () => useBetween(useLogicStates); */
 
 //= ==============================================================================================
 export function useInit() {
